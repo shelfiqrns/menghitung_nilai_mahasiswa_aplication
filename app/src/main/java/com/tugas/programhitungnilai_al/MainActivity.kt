@@ -1,4 +1,4 @@
-package com.tugas.programhitungnilai_al// Sesuaikan dengan nama package project kamu
+package com.tugas.programhitungnilai_al
 
 import android.os.Bundle
 import android.widget.Button
