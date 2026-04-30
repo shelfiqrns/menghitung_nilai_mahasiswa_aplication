@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFBFA"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="Aplikasi Menghitung"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Nilai Mahasiswa"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Nilai Presensi"
+            android:textColor="#3F51B5" />
+
+        <EditText
+            android:id="@+id/etPresensi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4B4B4B"
+            android:hint="masukkan nilai (1-100)"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textColorHint="#525252" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nilai Tugas"
+            android:textColor="#3F51B5" />
+
+        <EditText
+            android:id="@+id/etTugas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#454444"
+            android:hint="masukkan nilai (1-100)"
+            android:inputType="numberDecimal"
+            android:textColor="#0F0E0E"
+            android:textColorHint="#505050" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nilai Responsi"
+            android:textColor="#3F51B5" />
+
+        <EditText
+            android:id="@+id/etResponsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#383737"
+            android:hint="masukkan nilai (1-100)"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textColorHint="#494949" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nilai UTS"
+            android:textColor="#3F51B5" />
+
+        <EditText
+            android:id="@+id/etUTS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5D5C5C"
+            android:hint="masukkan nilai (1-100)"
+            android:inputType="numberDecimal"
+            android:textColor="#090909"
+            android:textColorHint="#3A3A3A" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nilai UAS"
+            android:textColor="#3F51B5" />
+
+        <EditText
+            android:id="@+id/etUAS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3A3939"
+            android:hint="masukkan nilai (1-100)"
+            android:inputType="numberDecimal"
+            android:textColor="#050505"
+            android:textColorHint="#494949" />
+
+        <Button
+            android:id="@+id/btnHitung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#3F51B5"
+            android:text="Hitung Nilai"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3F51B5"
+            android:text="Reset"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#F6F6F6"
+            android:padding="10dp"
+            android:text="Hasil akan muncul di sini"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>
