@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 1. Inisialisasi View berdasarkan ID di XML
+        //Inisialisasi View berdasarkan ID di XML
         val etPresensi = findViewById<EditText>(R.id.etPresensi)
         val etTugas = findViewById<EditText>(R.id.etTugas)
         val etResponsi = findViewById<EditText>(R.id.etResponsi)
@@ -23,9 +23,8 @@ class MainActivity : AppCompatActivity() {
         val btnReset = findViewById<Button>(R.id.btnReset)
         val tvHasil = findViewById<TextView>(R.id.tvHasil)
 
-        // 2. Logika Tombol Hitung
         btnHitung.setOnClickListener {
-            // Mengambil input dan mengubah ke Double (jika kosong otomatis 0.0)
+            // Mengambil input dan mengubah ke Double (jika kosong makan akan otomatis 0.0)
             val nPresensi = etPresensi.text.toString().toDoubleOrNull() ?: 0.0
             val nTugas = etTugas.text.toString().toDoubleOrNull() ?: 0.0
             val nResponsi = etResponsi.text.toString().toDoubleOrNull() ?: 0.0
@@ -36,18 +35,18 @@ class MainActivity : AppCompatActivity() {
             if (nPresensi > 100 || nTugas > 100 || nResponsi > 100 || nUTS > 100 || nUAS > 100) {
                 Toast.makeText(this, "Nilai tidak boleh lebih dari 100!", Toast.LENGTH_SHORT).show()
             } else {
-                // Jalankan Function 1 (Hitung Nilai Akhir)
+                //Function 1 (Hitung Nilai Akhir)
                 val nilaiAkhir = hitungNilaiAngka(nPresensi, nTugas, nResponsi, nUTS, nUAS)
 
-                // Jalankan Function 2 (Konversi ke Huruf)
+                //Function 2 (Konversi nilai ke Huruf)
                 val grade = konversiNilaiHuruf(nilaiAkhir)
 
-                // Tampilkan Hasil di TextView abu-abu
+                // Menampilkan Hasil di TextView abu-abu
                 tvHasil.text = "Nilai Akhir: ${String.format("%.2f", nilaiAkhir)}\nGrade: $grade"
             }
         }
 
-        // 3. Logika Tombol Reset
+        //Logika Tombol Reset
         btnReset.setOnClickListener {
             etPresensi.text.clear()
             etTugas.text.clear()
