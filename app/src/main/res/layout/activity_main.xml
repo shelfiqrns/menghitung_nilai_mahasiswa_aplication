@@ -1,153 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFBFA"
-    android:padding="20dp">
+    android:background="#000000"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="32dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:text="Aplikasi Menghitung"
-            android:textAlignment="center"
-            android:textColor="#3F51B5"
-            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="Penghitung Nilai"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
+        <!-- Input Presensi -->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:text="Nilai Mahasiswa"
+            android:text="Mahasiswa"
             android:textAlignment="center"
-            android:textColor="#3F51B5"
-            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Nilai Presensi"
-            android:textColor="#3F51B5" />
-
-        <EditText
-            android:id="@+id/etPresensi"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#4B4B4B"
-            android:hint="masukkan nilai (1-100)"
-            android:inputType="numberDecimal"
-            android:textColor="#000000"
-            android:textColorHint="#525252" />
+            android:layout_marginTop="16dp"
+            android:hint="Nilai Presensi"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nilai Tugas"
-            android:textColor="#3F51B5" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPresensi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#CA1818" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/etTugas"
+        <!-- Layout Horizontal: Tugas & Responsi -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#454444"
-            android:hint="masukkan nilai (1-100)"
-            android:inputType="numberDecimal"
-            android:textColor="#0F0E0E"
-            android:textColorHint="#505050" />
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nilai Responsi"
-            android:textColor="#3F51B5" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:hint="Nilai Tugas"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
 
-        <EditText
-            android:id="@+id/etResponsi"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTugas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#505050"
+                    android:textColorLink="#A03535" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Nilai Responsi"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etResponsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#FAFAFA"
+                    android:textColorHint="#505050"
+                    android:textColorLink="#A03535" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Layout Horizontal: UTS & UAS -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#383737"
-            android:hint="masukkan nilai (1-100)"
-            android:inputType="numberDecimal"
-            android:textColor="#000000"
-            android:textColorHint="#494949" />
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nilai UTS"
-            android:textColor="#3F51B5" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:hint="Nilai UTS"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
 
-        <EditText
-            android:id="@+id/etUTS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#5D5C5C"
-            android:hint="masukkan nilai (1-100)"
-            android:inputType="numberDecimal"
-            android:textColor="#090909"
-            android:textColorHint="#3A3A3A" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUTS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#505050"
+                    android:textColorLink="#A03535" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nilai UAS"
-            android:textColor="#3F51B5" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Nilai UAS"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp">
 
-        <EditText
-            android:id="@+id/etUAS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#3A3939"
-            android:hint="masukkan nilai (1-100)"
-            android:inputType="numberDecimal"
-            android:textColor="#050505"
-            android:textColorHint="#494949" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUAS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#505050"
+                    android:textColorLink="#A03535" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btnHitung"
+            android:id="@+id/btnCalculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="#3F51B5"
-            android:text="Hitung Nilai"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp" />
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#BB45D1"
+            android:padding="12dp"
+            android:text="HITUNG NILAI"
+            android:textStyle="bold" />
 
-        <Button
+        <!-- Card Hasil Default -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nilai Akhir"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvNilaiAngka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="16dp"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grade Kompetensi"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvGrade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnReset"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#3F51B5"
-            android:text="Reset"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/tvHasil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#F6F6F6"
-            android:padding="10dp"
-            android:text="Hasil akan muncul di sini"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="Reset Nilai"
+            android:visibility="gone"
+            app:fabSize="normal"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
     </LinearLayout>
 </ScrollView>
